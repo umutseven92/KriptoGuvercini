@@ -1,0 +1,76 @@
+﻿@using KriptoGuvercini.data
+@using KriptoGuvercini.src
+
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Hakkında</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>About</h2>
+    }
+
+
+</div>
+<hr />
+<div style="color:white">
+
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <br />
+        <p class="lead"><strong>@ResourcesTR.about1</strong></p>
+        <p>@ResourcesTR.about2 </p>
+        <p>@ResourcesTR.about3</p>
+        <p><a href="http://money.cnn.com/2013/12/04/technology/security/passwords-stolen/">@ResourcesTR.about4</a> @ResourcesTR.about5</p>
+        <p>@ResourcesTR.about6</p>
+        <p>@ResourcesTR.about7</p>
+        <br />
+        <p class="lead"><strong>@ResourcesTR.about8</strong> </p>
+        <p>@ResourcesTR.about9 <a href="https://tr.wikipedia.org/wiki/RSA">RSA</a> @ResourcesTR.about10 <a href="https://tr.wikipedia.org/wiki/AES">AES</a> @ResourcesTR.about11 </p>
+
+        <p style="color: green">@ResourcesTR.about12</p>
+
+        <p> @ResourcesTR.about13 </p>
+
+        <p style="color: green">
+            83 af 9f 45 96 45 4e 67 07 48 b9 e6 0e eb 2a dc
+            dd 96 fc a0 50 80 e2 f9 c6 b2 2a 67 2f 90 22 7a
+            ec 6a 4f d5 4f 9a f0 ba
+        </p>
+
+        <p> @ResourcesTR.about14</p>
+        <p><strong>@ResourcesTR.about15</strong></p>
+        <p> @ResourcesTR.open <a>GitHub depomuzda</a> bulabilirsiniz.</p>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <br />
+        <p class="lead"><strong>@ResourcesEN.about1</strong></p>
+        <p>@ResourcesEN.about2 </p>
+        <p>@ResourcesEN.about3</p>
+        <p>@ResourcesEN.about4<a href="http://money.cnn.com/2013/12/04/technology/security/passwords-stolen/"> @ResourcesEN.about5</a> Or..</p>
+        <p>@ResourcesEN.about6</p>
+        <p>@ResourcesEN.about7</p>
+        <br />
+        <p class="lead"><strong>@ResourcesEN.about8</strong> </p>
+        <p>@ResourcesEN.about9 <a href="https://tr.wikipedia.org/wiki/RSA">RSA</a> @ResourcesEN.about10 <a href="https://tr.wikipedia.org/wiki/AES">AES</a> @ResourcesEN.about11 </p>
+
+        <p style="color: green">@ResourcesEN.about12</p>
+
+        <p> @ResourcesEN.about13 </p>
+
+        <p style="color: green">
+            83 af 9f 45 96 45 4e 67 07 48 b9 e6 0e eb 2a dc
+            dd 96 fc a0 50 80 e2 f9 c6 b2 2a 67 2f 90 22 7a
+            ec 6a 4f d5 4f 9a f0 ba
+        </p>
+
+        <p> @ResourcesEN.about14</p>
+        <p><strong>@ResourcesEN.about15</strong></p>
+        <p> @ResourcesEN.open <a>GitHub repository.</a></p>
+    }
+
+
+</div>

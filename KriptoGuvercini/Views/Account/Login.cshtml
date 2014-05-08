@@ -1,0 +1,54 @@
+﻿@using KriptoGuvercini.src
+@model KriptoGuvercini.Models.LoginViewModel
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Giris Yap</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Login</h2>
+    }
+
+</div>
+
+<section id="loginForm">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        if (CultureHelper.GetCurrentCulture() == "tr-TR")
+        {
+
+            @Html.AntiForgeryToken()
+            <hr />
+            <br />
+            <center style="color: red">@TempData["LoginError"]</center>
+            <div>
+                <center style="padding-top: 10px">Kullanici Adi:   @Html.TextBoxFor(m => m.UserName)  </center>@Html.ValidationMessageFor(m => m.UserName)
+                <center style="padding-top: 10px;padding-left: 51px">Sifre:   @Html.PasswordFor(m => m.Password) </center>@Html.ValidationMessageFor(m => m.Password)
+                <center style="padding-top:10px">Beni Hatırla:    @Html.CheckBoxFor(m => m.RememberMe)</center>
+            </div>
+            <br />
+            <input type="submit" value="Giriş Yap" />
+        }
+        else if (CultureHelper.GetCurrentCulture() == "en-US")
+        {
+            @Html.AntiForgeryToken()
+            <hr />
+            <br />
+            <center style="color: red">@TempData["LoginError"]</center>
+            <div>
+                <center style="padding-top: 10px">User Name:   @Html.TextBoxFor(m => m.UserName)  </center>@Html.ValidationMessageFor(m => m.UserName)
+                <center style="padding-top: 10px;padding-left: 13px">Password:   @Html.PasswordFor(m => m.Password) </center>@Html.ValidationMessageFor(m => m.Password)
+                <center style="padding-top:10px">Remember Me:    @Html.CheckBoxFor(m => m.RememberMe)</center>
+            </div>
+            <br />
+            <input type="submit" value="Login" />
+        }
+
+    }
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

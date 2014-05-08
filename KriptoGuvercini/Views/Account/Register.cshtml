@@ -1,0 +1,50 @@
+﻿@using KriptoGuvercini.src
+@model KriptoGuvercini.Models.RegisterViewModel
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Kayit Ol</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Register</h2>
+    }
+
+</div>
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <div>
+            <center style="padding-top: 10px">Kullanıcı Adı:  @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.UserName)
+            <center style="padding-top:10px;padding-left: 50px">Sifre:     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.Password)
+            <center style="padding-top:10px">Sifre Tekrar:    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.ConfirmPassword)
+
+        </div>
+        <br />
+
+        <input type="submit" value="Kayıt Olun" />
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <div>
+            <center style="padding-top: 10px">User Name:  @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.UserName)
+            <center style="padding-top:10px;padding-left: 14px">Password:     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.Password)
+            <center style="padding-top:10px;padding-right: 45px">Repeat Password:    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })</center>@Html.ValidationMessageFor(m => m.ConfirmPassword)
+
+        </div>
+        <br />
+
+        <input type="submit" value="Register" />
+    }
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

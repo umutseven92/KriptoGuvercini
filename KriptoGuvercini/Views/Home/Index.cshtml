@@ -1,0 +1,33 @@
+﻿
+@using KriptoGuvercini.data
+@using KriptoGuvercini.src
+
+<hr />
+<div style="color: white">
+    <br />
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <p class="lead">@ResourcesTR.intro Daha detaylı bilgi için @Html.ActionLink("tıklayınız", "About").</p>
+        if (!User.Identity.IsAuthenticated)
+        {
+            <p>Başlamak için lütfen @Html.ActionLink("giriş yapınız", "Login", "Account").</p>
+        }
+        if (User.Identity.IsAuthenticated)
+        {
+            <p>@ResourcesTR.introLoggedIn Bir üyeye mesaj yazmak için @Html.ActionLink("Mesajlar", "Index", "Message") bölümüne gidiniz.</p>
+        }
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <p class="lead">@ResourcesEN.intro @Html.ActionLink("Click", "About") for more details.</p>
+        if (!User.Identity.IsAuthenticated)
+        {
+            <p>Please @Html.ActionLink("login", "Login", "Account") to start.</p>
+        }
+        if (User.Identity.IsAuthenticated)
+        {
+            <p>@ResourcesEN.introLoggedIn To start messaging other people, go to @Html.ActionLink("Messages", "Index", "Message").</p>
+        }
+    }
+
+</div>

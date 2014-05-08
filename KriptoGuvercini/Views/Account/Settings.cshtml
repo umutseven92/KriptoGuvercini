@@ -1,0 +1,47 @@
+﻿@using KriptoGuvercini.Models
+@using KriptoGuvercini.src
+@using Microsoft.AspNet.Identity
+
+@using (Html.BeginForm())
+{
+
+    if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <div>
+            @using (var db = new KriptoGuverciniDBEntities())
+            {
+                if (db.AspNetUsers.Find(User.Identity.GetUserId()).DeleteAfterRead == true)
+                {
+                    <center>Mesajlari okunduktan sonra sil: @Html.CheckBox("chkDeleteAfter", true) </center>
+                }
+                else
+                {
+                    <center>Mesajlari okunduktan sonra sil: @Html.CheckBox("chkDeleteAfter", false) </center>
+                }
+            }
+            <br/>
+            <input type="submit" value="Kaydet" />
+        </div>
+
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <div>
+            @using (var db = new KriptoGuverciniDBEntities())
+            {
+                if (db.AspNetUsers.Find(User.Identity.GetUserId()).DeleteAfterRead == true)
+                {
+                    <center>Delete messages after reading: @Html.CheckBox("chkDeleteAfter", true) </center>
+                }
+                else
+                {
+                    <center>Delete messages after reading: @Html.CheckBox("chkDeleteAfter", false) </center>
+                }
+            }
+            <br/>
+            <input type="submit" value="Save" />
+        </div>
+
+
+    }
+}

@@ -1,0 +1,73 @@
+﻿@using KriptoGuvercini.src
+@model KriptoGuvercini.Models.Message
+
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+
+        <h2>Mesaj Yarat</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+
+        <h2>New Message</h2>
+    }
+
+
+</div>
+<hr />
+@if (CultureHelper.GetCurrentCulture() == "tr-TR")
+{
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <center style="color: red">@TempData["error"]</center>
+            <br />
+            <center>Alıcınınızın Kullanıcı Adı: </center>
+            <center style="padding-top: 10px"><input type="text" id="txtUserName" name="txtUserName" style="width: 325px" data-val="true" data-val-required="Lütfen alıcıyı giriniz." /></center>
+
+            <center style="padding-top: 10px">Mesajınız: <textarea id="txtMessage" name="txtMessage" data-val="true" data-val-required="Lütfen mesajınızı giriniz." maxlength="225" rows="10" cols="100"></textarea> </center>
+            <br />
+            <input type="submit" value="Yarat" />
+
+        </div>
+    }
+
+    <center style="padding-top: 10px">
+        @Html.ActionLink("Mesajlara Geri Dön", "Index")
+    </center>
+
+}
+else if (CultureHelper.GetCurrentCulture() == "en-US")
+{
+
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <center style="color: red">@TempData["error"]</center>
+            <br />
+            <center>Receivers User Name: </center>
+            <center style="padding-top: 10px"><input type="text" id="txtUserName" name="txtUserName" style="width: 325px" data-val="true" data-val-required="Please enter the receivers user name." /></center>
+
+            <center style="padding-top: 10px">Your Message: <textarea id="txtMessage" name="txtMessage" data-val="true" data-val-required="Please enter your message" maxlength="225" rows="10" cols="100"></textarea> </center>
+            <br />
+            <input type="submit" value="Send" />
+
+        </div>
+    }
+
+    <center style="padding-top: 10px">
+        @Html.ActionLink("Back to Messages", "Index")
+    </center>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

@@ -1,0 +1,38 @@
+﻿@using KriptoGuvercini.Models;
+@using KriptoGuvercini.src
+@using Microsoft.AspNet.Identity;
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Sifre Degistir</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Change Password</h2>
+    }
+
+</div>
+<div>
+    <div>
+        <label style="color: red">@ViewBag.StatusMessage</label>
+
+        @Html.Partial("_ChangePasswordPartial")
+
+    </div>
+    <br/>
+    <div>
+        @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+        {
+            @Html.ActionLink("Hesap Ayarları..","Settings")
+        }
+        else if (CultureHelper.GetCurrentCulture() == "en-US")
+        {
+            @Html.ActionLink("Account Settings..","Settings")
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

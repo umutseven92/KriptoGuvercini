@@ -1,0 +1,85 @@
+﻿@using KriptoGuvercini.data
+@using KriptoGuvercini.src
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <title>@ResourcesTR.name</title>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <title>@ResourcesEN.name</title>
+    }
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+</head>
+<body style="padding: 0px">
+    <div id="wrapper1">
+
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+                {
+                    <div id="logo">
+                        <a><img src="~/Content/images/logo.png" style="height: 200px;width: 200px" alt="Kripto Guvecini" /></a>
+                        <h1><a>@ResourcesTR.name</a></h1>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li>@Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { })</li>
+                            <li>@Html.ActionLink("Hakkında", "About", "Home")</li>
+                            @Html.Partial("_LoginPartial")
+                        </ul>
+
+                    </div>
+                }
+                else if (CultureHelper.GetCurrentCulture() == "en-US")
+                {
+                    <div id="logo">
+                        <a><img src="~/Content/images/logo.png" style="height: 200px;width: 200px" alt="Kripto Guvecini" /></a>
+                        <h1><a>@ResourcesEN.name</a></h1>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li>@Html.ActionLink("Home Page", "Index", "Home", null, new { })</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            @Html.Partial("_LoginPartial")
+                        </ul>
+
+                    </div>
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="wrapper2">
+        <div id="welcome" class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div id="copyright" class="container">
+        <p>2014 - Umut Seven <br /> @Html.ActionLink("EN", "SetCulture", "Home", new { culture = "en-US" }, new { style = "color: green;text-decoration: none" }) || @Html.ActionLink("TR", "SetCulture", "Home", new { culture = "tr-TR" }, new { style = "color: green;text-decoration: none" })</p>
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

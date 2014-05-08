@@ -1,0 +1,130 @@
+﻿@using KriptoGuvercini.data
+@using KriptoGuvercini.src
+@model IEnumerable<KriptoGuvercini.Models.Message>
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Mesajlar</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Messages</h2>
+    }
+
+</div>
+<hr />
+<center style="color: red">@TempData["passwordError"]</center>
+<br />
+<center>
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        @Html.ActionLink("Yeni Oluştur", "Create")
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
+
+</center>
+<br />
+@if (CultureHelper.GetCurrentCulture() == "tr-TR")
+{
+    <table style="border-style:solid;border-color: green;width: 100%;color:white " border="1">
+    <tr>
+        <th>
+            Gönderilme Tarihi
+        </th>
+
+        <th>
+            Kimden
+        </th>
+
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentDate)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+            </td>
+
+            <td>
+                @using (Html.BeginForm())
+                {
+
+                    <input type="hidden" value="@item.Id" name="txtId" id="txtId" />
+                    <text>Şifreniz: </text> <input type="password" id="txtPassword" name="txtPassword" style="width: 150px" data-val="true" data-val-required="Lütfen şifrenizi giriniz." />
+                    <input type="submit" value="Mesaji Oku" />
+
+                }
+
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+}
+else if (CultureHelper.GetCurrentCulture() == "en-US")
+{
+   <table style="border-style:solid;border-color: green;width: 100%;color:white " border="1">
+    <tr>
+        <th>
+            Sent Date
+        </th>
+
+        <th>
+            From
+        </th>
+
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentDate)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+            </td>
+
+            <td>
+                @using (Html.BeginForm())
+                {
+
+                    <input type="hidden" value="@item.Id" name="txtId" id="txtId" />
+                    <text>Password: </text> <input type="password" id="txtPassword" name="txtPassword" style="width: 150px" data-val="true" data-val-required="Please enter your password." />
+                    <input type="submit" value="Read Message" />
+
+                }
+
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

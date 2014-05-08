@@ -1,0 +1,41 @@
+﻿@using KriptoGuvercini.src
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Mesaj Detaylari</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Details</h2>
+    }
+</div>
+<hr />
+<div>
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <ul>
+            <li><center>Gönderici: @ViewBag.UserName</center>  </li>
+            <li><center>Gönderilme Tarihi: @ViewBag.SentDate</center> </li>
+            <li><center>Mesaj: <p style="color: green; word-wrap: break-word">@ViewBag.EncryptedBody </p> </center></li>
+        </ul>
+        <center>
+            @Html.ActionLink("Mesajlara Geri Dön", "Index")
+        </center>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <ul>
+            <li><center>Sent by: @ViewBag.UserName</center>  </li>
+            <li><center>Date: @ViewBag.SentDate</center> </li>
+            <li><center>Message: <p style="color: green; word-wrap: break-word">@ViewBag.EncryptedBody </p> </center></li>
+        </ul>
+        <center>
+            @Html.ActionLink("Back to Messages", "Index")
+        </center>
+    }
+
+
+
+</div>
+

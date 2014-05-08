@@ -1,0 +1,57 @@
+﻿@using KriptoGuvercini.src
+@model KriptoGuvercini.Models.Message
+
+
+<div class="title">
+    @if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <h2>Mesaj Sil</h2>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <h2>Delete Message</h2>
+    }
+
+</div>
+<hr />
+@if (CultureHelper.GetCurrentCulture() == "tr-TR")
+{
+    <h3 style="color: red">Bu mesajı silmek istediğinize emin misiniz?</h3>
+    <br />
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <center>Gönderen: @Model.AspNetUser.UserName</center>
+                <center>Gönderilme Tarihi: @Model.SentDate</center>
+                <input type="submit" value="Sil" />
+            </div>
+            <br />
+            @Html.ActionLink("Mesajlara Geri Dön", "Index")
+
+        }
+    </div>
+
+}
+else if (CultureHelper.GetCurrentCulture() == "en-US")
+{
+    <h3 style="color: red">Are you sure you want to delete this message?</h3>
+    <br />
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <center>Sent by: @Model.AspNetUser.UserName</center>
+                <center>Date: @Model.SentDate</center>
+                <input type="submit" value="Delete" />
+            </div>
+            <br />
+            @Html.ActionLink("Back to Messages", "Index")
+
+        }
+    </div>
+}
+
+

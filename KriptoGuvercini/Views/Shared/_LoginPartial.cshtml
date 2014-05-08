@@ -1,0 +1,165 @@
+﻿@using System.Globalization
+@using KriptoGuvercini.data
+@using KriptoGuvercini.Models
+@using KriptoGuvercini.src
+@using Microsoft.Ajax.Utilities
+@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        if (CultureHelper.GetCurrentCulture() == "tr-TR")
+        {
+            <li>
+                @Html.ActionLink("Merhaba " + User.Identity.GetUserName() + ".", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li>
+                @{
+            var db = new KriptoGuverciniDBEntities();
+            var userId = User.Identity.GetUserId();
+            var count = db.Messages.Where(m => m.ToID == userId).Count(m => m.Read == false);
+
+                }
+                <div id="messageCountTR">
+                    @if (count == 0)
+                    {
+                    @Html.ActionLink("Mesajlar", "Index", "Message")
+                    }
+                    else if (count == 1)
+                    {
+                    @Html.ActionLink("Mesajlar ¹", "Index", "Message")
+                    }
+                    else if (count == 2)
+                    {
+                    @Html.ActionLink("Mesajlar ²", "Index", "Message")
+                    }
+                    else if (count == 3)
+                    {
+                    @Html.ActionLink("Mesajlar ³", "Index", "Message")
+                    }
+                    else if (count == 4)
+                    {
+                    @Html.ActionLink("Mesajlar ⁴", "Index", "Message")
+                    }
+                    else if (count == 5)
+                    {
+                    @Html.ActionLink("Mesajlar ⁵", "Index", "Message")
+                    }
+                    else if (count == 6)
+                    {
+                    @Html.ActionLink("Mesajlar ⁶", "Index", "Message")
+                    }
+                    else if (count == 7)
+                    {
+                    @Html.ActionLink("Mesajlar ⁷", "Index", "Message")
+                    }
+                    else if (count == 8)
+                    {
+                    @Html.ActionLink("Mesajlar ⁸", "Index", "Message")
+                    }
+                    else if (count == 9)
+                    {
+                    @Html.ActionLink("Mesajlar ⁹", "Index", "Message")
+                    }
+                    else if (count == 10)
+                    {
+                    @Html.ActionLink("Mesajlar ¹⁰", "Index", "Message")
+                    }
+                    else if (count > 10)
+                    {
+                    @Html.ActionLink("Mesajlar ¹⁰⁺", "Index", "Message")
+                    }
+                </div>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Cıkış</a></li>
+        }
+        else if (CultureHelper.GetCurrentCulture() == "en-US")
+        {
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + ".", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li>
+                @{
+            var db = new KriptoGuverciniDBEntities();
+            var userId = User.Identity.GetUserId();
+            var count = db.Messages.Where(m => m.ToID == userId).Count(m => m.Read == false);
+
+                }
+                <div id="messageCountEN">
+                    @if (count == 0)
+                    {
+                    @Html.ActionLink("Messages", "Index", "Message")
+                    }
+                    else if (count == 1)
+                    {
+                    @Html.ActionLink("Messages ¹", "Index", "Message")
+                    }
+                    else if (count == 2)
+                    {
+                    @Html.ActionLink("Messages ²", "Index", "Message")
+                    }
+                    else if (count == 3)
+                    {
+                    @Html.ActionLink("Messages ³", "Index", "Message")
+                    }
+                    else if (count == 4)
+                    {
+                    @Html.ActionLink("Messages ⁴", "Index", "Message")
+                    }
+                    else if (count == 5)
+                    {
+                    @Html.ActionLink("Messages ⁵", "Index", "Message")
+                    }
+                    else if (count == 6)
+                    {
+                    @Html.ActionLink("Messages ⁶", "Index", "Message")
+                    }
+                    else if (count == 7)
+                    {
+                    @Html.ActionLink("Messages ⁷", "Index", "Message")
+                    }
+                    else if (count == 8)
+                    {
+                    @Html.ActionLink("Messages ⁸", "Index", "Message")
+                    }
+                    else if (count == 9)
+                    {
+                    @Html.ActionLink("Messages ⁹", "Index", "Message")
+                    }
+                    else if (count == 10)
+                    {
+                    @Html.ActionLink("Messages ¹⁰", "Index", "Message")
+                    }
+                    else if (count > 10)
+                    {
+                    @Html.ActionLink("Messages ¹⁰⁺", "Index", "Message")
+                    }
+                </div>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a></li>
+        }
+
+
+
+    }
+}
+else
+{
+
+    if (CultureHelper.GetCurrentCulture() == "tr-TR")
+    {
+        <li>@Html.ActionLink("Kayıt Ol", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Giris Yap", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+    else if (CultureHelper.GetCurrentCulture() == "en-US")
+    {
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+
+
+
+}
