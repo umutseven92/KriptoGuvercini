@@ -1,6 +1,8 @@
 KriptoGuvercini
 ===============
 
+www.kriptoguvercini.com
+
 Kripto Guvercini - Türkiye icin guvenli mesajlasma platformu.
 
 Internette yazdığınız herşey izleniyor & kayıt altına alınıyor.
