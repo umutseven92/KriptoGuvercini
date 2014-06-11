@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace KriptoGuvercini.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class MessageController : BaseController
     {

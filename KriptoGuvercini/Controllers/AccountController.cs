@@ -10,6 +10,7 @@ using KriptoGuvercini.Models;
 
 namespace KriptoGuvercini.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class AccountController : BaseController
     {
