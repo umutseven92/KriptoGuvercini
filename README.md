@@ -1,6 +1,8 @@
 Crypto Pigeon
 ===============
 
+http://www.kriptoguvercini.com/en-US
+
 Everything you write on the Internet is being watched & recorded.
 
 Whenever you message someone, your message gets stored on databases.
