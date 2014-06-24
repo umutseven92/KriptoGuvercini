@@ -133,7 +133,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These messages can be seen by site owners. Or...
+        ///   Looks up a localized string similar to These messages can be seen by site owners,.
         /// </summary>
         public static string about3 {
             get {
@@ -160,7 +160,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theses messages can be seen by people who are listening. And most importantly...
+        ///   Looks up a localized string similar to Your messages can be seen by people who are listening. And most importantly...
         /// </summary>
         public static string about6 {
             get {
@@ -169,7 +169,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What you write can be used (and will be used) against you by people or organizations with lots of resources..
+        ///   Looks up a localized string similar to Whatever you write can be used (and will be used) against you by people or organizations with lots of resources..
         /// </summary>
         public static string about7 {
             get {

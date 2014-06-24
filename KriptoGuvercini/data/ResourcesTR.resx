@@ -142,16 +142,16 @@
     <value>Sosyal medyada, emaillerinizde birine mesaj attığınızda bu mesajlar veritabanlarında saklanır.</value>
   </data>
   <data name="about3" xml:space="preserve">
-    <value>Bu mesajlar site sahipleri tarafindan gorülebilir. Veya..</value>
+    <value>Bu mesajlar site sahipleri tarafindan gorülebilir,</value>
   </data>
   <data name="about4" xml:space="preserve">
     <value>Veritabanları hacklenirse</value>
   </data>
   <data name="about5" xml:space="preserve">
-    <value>kötü niyetli insanlar tarafından görülebilir. Veya..</value>
+    <value>kötü niyetli insanlar tarafından görülebilir,</value>
   </data>
   <data name="about6" xml:space="preserve">
-    <value>Bu mesajlar sizi dinleyen kişiler tarafından görülebilir. Ve en önemlisi..</value>
+    <value>Mesajlarınız sizi dinleyen kişiler tarafından görülebilir. Ve en önemlisi..</value>
   </data>
   <data name="about7" xml:space="preserve">
     <value>Yazdığınız herşey birsürü kaynağı olan kişiler ve gruplara açıktır ve aleyhinizde kullanılabilir (ve kullanılır).</value>

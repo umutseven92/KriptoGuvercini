@@ -222,6 +222,7 @@ namespace KriptoGuvercini.Controllers
                     var messageByte = rsa.Encrypt(Encoding.UTF8.GetBytes(txtMessage), false);
                     message.MessageBody = messageByte;
                     message.FromID = userSending.Id;
+                    //if (anonymous.checked) message.FromID = "anon";
                     message.ToID = userToSend.Id;
                     message.SentDate = DateTime.Now;
                     message.Read = false;

@@ -133,7 +133,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bu mesajlar site sahipleri tarafindan gorülebilir. Veya...
+        ///   Looks up a localized string similar to Bu mesajlar site sahipleri tarafindan gorülebilir,.
         /// </summary>
         public static string about3 {
             get {
@@ -151,7 +151,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kötü niyetli insanlar tarafından görülebilir. Veya...
+        ///   Looks up a localized string similar to kötü niyetli insanlar tarafından görülebilir,.
         /// </summary>
         public static string about5 {
             get {
@@ -160,7 +160,7 @@ namespace KriptoGuvercini.data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bu mesajlar sizi dinleyen kişiler tarafından görülebilir. Ve en önemlisi...
+        ///   Looks up a localized string similar to Mesajlarınız sizi dinleyen kişiler tarafından görülebilir. Ve en önemlisi...
         /// </summary>
         public static string about6 {
             get {
