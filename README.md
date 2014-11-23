@@ -1,3 +1,6 @@
+![Kripto Guvercini](https://raw.githubusercontent.com/umutseven92/KriptoGuvercini/master/KriptoGuvercini/Content/images/logo.png)
+
+
 Kripto Guvercini
 ===============
 
