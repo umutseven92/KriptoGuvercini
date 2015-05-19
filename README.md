@@ -1,7 +1,7 @@
 ![Kripto Guvercini](https://raw.githubusercontent.com/umutseven92/KriptoGuvercini/master/KriptoGuvercini/Content/images/logo.png)
 
 
-Kripto Guvercini
+Kripto Güvercini
 ===============
 
 Kripto Guvercini - Türkiye icin guvenli mesajlasma platformu.
@@ -34,39 +34,7 @@ gibi görülür. Mesaj sadece okunacağı zaman, alıcı tarafından deşifrelen
 
 Uzun lafın kısası, Kripto Güvercini ile yazdığınız herşey güvendedir.
 
+Kripto Güvercini, Tübitak Yazılım Projeleri Yarışması kapsamında 23-25 Haziran 2014 tarihleri arasında sergilenmiştir.
+
 Kripto Güvercini GNU/GPL2 ile lisanslanmıştır.
-
-Crypto Pigeon
-===============
-
-Everything you write on the Internet is being watched & recorded.
-
-Whenever you message someone, your message gets stored on databases.
-
-These messages can be seen by site owners. Or..
-
-They can be seen if databases get hacked. Or..
-
-Theses messages can be seen by people who are listening. And most importantly..
-
-What you write can be used (and will be used) against you by people or organizations with lots of resources.
-
-
-The messages you write can't be read by anyone but the receiver.
-
-When you register, unique 2048-bit RSA keys are created for you and stored using the AES algorithm, using the password you set during registration. Your message gets encrypted with the receivers public key. Therefore, the message
-
-    "You want to meet up on Saturday?"
-
-looks like
-
-    83 af 9f 45 96 45 4e 67 07 48 b9 e6 0e eb 2a dc
-    dd 96 fc a0 50 80 e2 f9 c6 b2 2a 67 2f 90 22 7a
-    ec 6a 4f d5 4f 9a f0 ba
-
-to everyone else. The message only gets decrypted when the receiver reads it and can be deleted afterwards (we strongly recommend it).
-
-Long story short, everything you write using Crypto Pigeon is secure.
-
-Crypto Pigeon is licensed under GNU/GPL2.
 
